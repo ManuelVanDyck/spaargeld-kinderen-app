@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/spaargeld-kinderen-app/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- PWA meta tags -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="Beheer het spaargeld van je kinderen" />
+
+    <!-- Apple specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Spaargeld" />
+    <link rel="apple-touch-icon" href="/spaargeld-kinderen-app/icon-192x192.png" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/spaargeld-kinderen-app/manifest.json" />
+
+    <title>Spaargeld Kinderen</title>
+    <script type="module" crossorigin src="/spaargeld-kinderen-app/assets/index-BSzwihvX.js"></script>
+    <link rel="modulepreload" crossorigin href="/spaargeld-kinderen-app/assets/rolldown-runtime-jpDsebLB.js">
+    <link rel="modulepreload" crossorigin href="/spaargeld-kinderen-app/assets/chart-DE6tRn8v.js">
+    <link rel="modulepreload" crossorigin href="/spaargeld-kinderen-app/assets/vendor-DeNXu2Pl.js">
+    <link rel="stylesheet" crossorigin href="/spaargeld-kinderen-app/assets/index-3jP9hSWu.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- PWA Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

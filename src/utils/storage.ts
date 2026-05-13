@@ -26,11 +26,80 @@ export const defaultAppData: AppData = {
       profileColor: '#f59e0b'
     }
   ],
-  transactions: [],
+  transactions: [
+    // Otis transactions
+    {
+      "id": "otis-income-1", "childId": "otis", "type": "income", 
+      "amount": 5.0, "description": "Wekelijks zakgeld week 1", "category": "Zakgeld",
+      "date": "2024-12-01"
+    },
+    {
+      "id": "otis-income-2", "childId": "otis", "type": "income", 
+      "amount": 5.0, "description": "Wekelijks zakgeld week 2", "category": "Zakgeld",
+      "date": "2024-12-08"
+    },
+    {
+      "id": "otis-expense-1", "childId": "otis", "type": "expense",
+      "amount": 3.50, "description": "Pokemonkaarten booster pack", "category": "Pokemonkaarten", 
+      "date": "2024-12-03"
+    },
+    {
+      "id": "otis-income-3", "childId": "otis", "type": "income",
+      "amount": 15.0, "description": "Opa en oma cadeaugeld", "category": "Cadeau",
+      "date": "2024-12-10"
+    },
+    {
+      "id": "otis-expense-2", "childId": "otis", "type": "expense",
+      "amount": 7.25, "description": "LEGO mini figuren", "category": "Speelgoed",
+      "date": "2024-12-12"
+    },
+    // Bavo transactions
+    {
+      "id": "bavo-income-1", "childId": "bavo", "type": "income",
+      "amount": 4.0, "description": "Wekelijks zakgeld week 1", "category": "Zakgeld",
+      "date": "2024-12-01"
+    },
+    {
+      "id": "bavo-income-2", "childId": "bavo", "type": "income",
+      "amount": 4.0, "description": "Wekelijks zakgeld week 2", "category": "Zakgeld",
+      "date": "2024-12-08"
+    },
+    {
+      "id": "bavo-expense-1", "childId": "bavo", "type": "expense", 
+      "amount": 2.50, "description": "Snoep bij tankstation", "category": "Snacks",
+      "date": "2024-12-05"
+    },
+    {
+      "id": "bavo-income-3", "childId": "bavo", "type": "income",
+      "amount": 10.0, "description": "Sinterklaas geld", "category": "Cadeau", 
+      "date": "2024-12-06"
+    },
+    // Annabel transactions
+    {
+      "id": "annabel-income-1", "childId": "annabel", "type": "income",
+      "amount": 3.0, "description": "Wekelijks zakgeld week 1", "category": "Zakgeld", 
+      "date": "2024-12-01"
+    },
+    {
+      "id": "annabel-income-2", "childId": "annabel", "type": "income",
+      "amount": 3.0, "description": "Wekelijks zakgeld week 2", "category": "Zakgeld",
+      "date": "2024-12-08"
+    },
+    {
+      "id": "annabel-expense-1", "childId": "annabel", "type": "expense",
+      "amount": 1.75, "description": "Stickers boekje", "category": "Speelgoed",
+      "date": "2024-12-04"
+    },
+    {
+      "id": "annabel-income-3", "childId": "annabel", "type": "income", 
+      "amount": 8.0, "description": "Kerstcadeaugeld van tante", "category": "Cadeau",
+      "date": "2024-12-11"
+    }
+  ],
   savingsGoals: [],
   categories: {
-    income: ['Zakgeld', 'Cadeau', 'Uit spaarpot', 'Verjaardagsgeld', 'Kerst', 'Rapport bonus'],
-    expense: ['Speelgoed', 'Pokemonkaarten', 'Snacks', 'Kleding', 'Boeken', 'Uitstapje']
+    income: ['Zakgeld', 'Cadeau', 'Uit spaarpot', 'Verjaardagsgeld', 'Kerst', 'Sinterklaas', 'Rapport bonus'],
+    expense: ['Speelgoed', 'Pokemonkaarten', 'Snacks', 'Kleding', 'Boeken', 'Uitstapje', 'LEGO', 'Stickers']
   },
   lastBackup: new Date().toISOString()
 };

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,16 +7,103 @@
 /* Custom styles */
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent overscroll bounce on iOS */
+  overscroll-behavior: none;
 }
 
-.card {
-  @apply bg-white rounded-lg shadow-md border border-gray-200 p-6;
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-.btn-primary {
-  @apply bg-savings-600 hover:bg-savings-700 text-white font-medium py-2 px-4 rounded-md transition-colors;
+/* Mobile slide-up animation for modals */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.btn-secondary {
-  @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md transition-colors;
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+@layer components {
+  .sg-card {
+    @apply bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6;
+  }
+
+  .sg-btn-primary {
+    @apply bg-savings-600 hover:bg-savings-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors min-h-[44px];
+  }
+
+  .sg-btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2.5 px-4 rounded-md transition-colors min-h-[44px];
+  }
+}
+
+/* Mobile-specific improvements */
+
+/* Ensure all interactive elements have minimum touch target size */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Better form input styling on mobile */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+select,
+textarea {
+  /* Prevent iOS zoom on focus */
+  font-size: 16px;
+}
+
+/* Safe area insets for notched devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Smooth scrolling on iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Disable tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar on mobile for cleaner look */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Active state for touch feedback */
+@media (hover: none) {
+  .touch-active:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+  }
 }

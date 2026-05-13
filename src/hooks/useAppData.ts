@@ -10,14 +10,17 @@ export const useAppData = () => {
 
   const selectedChildBalance = useMemo(() => {
     return app.calculateBalance(app.selectedChildId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [app.selectedChildId, app.data.transactions]);
 
   const selectedChildTransactions = useMemo(() => {
     return app.getTransactions(app.selectedChildId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [app.selectedChildId, app.data.transactions]);
 
   const selectedChildSavingsGoals = useMemo(() => {
     return app.getSavingsGoals(app.selectedChildId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [app.selectedChildId, app.data.savingsGoals]);
 
   return {

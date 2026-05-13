@@ -5,7 +5,7 @@ const ChildSelector: React.FC = () => {
   const { data, selectedChildId, setSelectedChildId, calculateBalance } = useAppData();
 
   return (
-    <div className="flex space-x-2 overflow-x-auto">
+    <div className="flex space-x-2 overflow-x-auto max-w-xs">
       {data.children.map((child) => {
         const balance = calculateBalance(child.id);
         const isSelected = selectedChildId === child.id;
